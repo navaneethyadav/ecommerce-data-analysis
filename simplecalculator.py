@@ -1,20 +1,26 @@
 def calculator():
-    a = float(input("Enter your first number: "))
-    b = float(input("Enter your second number: "))
-    op = input("Enter operation (+, -, *, /): ")
+    print("Simple Calculator")
+    while True:
+        print("\nSelect operation: +, -, *, /, or 'q' to quit")
+        op = input("Operation: ")
 
-    if op == '+':
-        print("Result:", a + b)
-    elif op == '-':
-        print("Result:", a - b)
-    elif op == '*':
-        print("Result:", a * b)
-    elif op == '/':
-        if b != 0:
-            print("Result:", a / b)
+        if op == 'q':
+            print("Exiting...")
+            break
+
+        a = float(input("Enter first number: "))
+        b = float(input("Enter second number: "))
+
+        if op == '+':
+            print("Result:", a + b)
+        elif op == '-':
+            print("Result:", a - b)
+        elif op == '*':
+            print("Result:", a * b)
+        elif op == '/':
+            print("Result:", a / b if b != 0 else "Error: Division by zero")
         else:
-            print("Error: Cannot divide by zero.")
-    else:
-        print("Invalid operator.")
+            print("Invalid operation!")
 
 calculator()
+
